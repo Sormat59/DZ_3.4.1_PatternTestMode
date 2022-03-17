@@ -4,8 +4,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.netology.data.DataGenerator;
 
-import java.util.function.Predicate;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.withText;
@@ -14,8 +12,8 @@ import static com.codeborne.selenide.Selenide.open;
 
 
 public class AuthTest {
-    private DataGenerator.UserInfo activeUser = DataGenerator.Registration.generateActiveUser();
-    private DataGenerator.UserInfo blockedUser = DataGenerator.Registration.generateBlockedUser();
+    private DataGenerator.UserInfo activeUser = DataGenerator.Registration.generateUserWithStatus("active");
+    private DataGenerator.UserInfo blockedUser = DataGenerator.Registration.generateUserWithStatus("blocked");
     private DataGenerator.UserInfo invalidPassUser = DataGenerator.Registration.generateInvalidPasswordUser("active");
     private DataGenerator.UserInfo invalidLogUser = DataGenerator.Registration.generateInvalidLoginUser("active");
 
